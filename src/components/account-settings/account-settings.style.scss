@@ -1,0 +1,85 @@
+.account-settings {
+	color: #1e1e1e;
+
+	&__header {
+		margin-bottom: 10px;
+
+		&--title {
+			font: 500 2rem 'Baloo 2', sans-serif;
+			margin-top: -6px;
+		}
+		> #acc-set-msg {
+			font-family: 'Baloo 2', sans-serif;
+			margin-top: -8px;
+			margin-bottom: 8px;
+		}
+	}
+
+	> hr {
+		margin: 20px 0;
+		border-color: rgba(250, 250, 250, 0.25);
+	}
+
+	&__content {
+		position: relative;
+		color: #1e1e1e;
+
+		&.--error {
+			> input {
+				border-color: #f44336;
+			}
+		}
+
+		&::before {
+			position: absolute;
+			bottom: 5px;
+			left: 615px;
+			width: fit-content;
+			content: attr(error);
+			font-family: 'Baloo 2', sans-serif;
+			font-size: 0.96rem;
+			color: #f44336;
+		}
+
+		&--title {
+			font-family: 'Baloo 2', sans-serif;
+			font-size: 1.4rem;
+		}
+		&--info {
+			font-size: 0.96rem;
+			color: #4e4e4e;
+			margin-top: -8px;
+		}
+		&--input {
+			transition: 0.2s ease;
+			background-color: #fafafa;
+			width: 600px;
+			height: 34px;
+			margin-top: 16px;
+			padding: 0 8px;
+			border: 1px solid #eaeaea;
+			border-radius: 4px;
+		}
+		> button {
+			transition: 0.2s ease;
+			background-color: #fafafa;
+			width: 140px;
+			height: 40px;
+			margin-top: 20px;
+			border: 1px solid #eaeaea;
+			border-radius: 2px;
+			cursor: pointer;
+
+			&:hover {
+				background-color: #f44336;
+				color: #fafafa;
+			}
+		}
+	}
+
+	&--ending {
+		width: 600px;
+		text-align: center;
+		margin-top: 40px;
+	}
+}

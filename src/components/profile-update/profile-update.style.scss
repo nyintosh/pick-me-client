@@ -1,0 +1,191 @@
+.profile-update {
+	transition: 0.2s linear;
+	background-color: #fafafacc;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 40px 0;
+	opacity: 1;
+	z-index: 9;
+
+	&.close {
+		opacity: 0;
+		pointer-events: none;
+
+		.profile-update__container {
+			transform: scale(0.9) translateX(-40px);
+		}
+	}
+
+	&__container {
+		transition: 0.2s ease;
+		position: relative;
+		background-color: #ffffff;
+		width: 500px;
+		height: fit-content;
+		transform: scale(1) translateX(0);
+		margin: 20px 0 60px 0;
+		border-radius: 2px;
+		box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
+		padding: 30px 40px 40px;
+
+		> p {
+			text-align: center;
+			color: #6a6a6a;
+			margin-top: 40px;
+		}
+		&--header {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font: 400 1.4rem 'Baloo 2', sans-serif;
+			color: #2a2a2a;
+
+			> p {
+				order: -1;
+			}
+			> svg {
+				color: #6a6a6a;
+				cursor: pointer;
+			}
+		}
+		&__form {
+			margin-top: 10px;
+			padding-top: 20px;
+			border-top: 1px solid #eaeaea;
+
+			&__input-box {
+				display: flex;
+				flex-direction: column;
+				margin-bottom: 20px;
+
+				&__content {
+					display: flex;
+					align-items: baseline;
+
+					&--image {
+						position: relative;
+						width: 140px;
+						height: 140px;
+						margin-top: 10px;
+						margin-right: 20px;
+						margin-left: -10px;
+						order: 2;
+
+						> img {
+							width: 100%;
+							height: 100%;
+							border: 2px solid #eaeaea;
+							border-radius: 100%;
+							cursor: pointer;
+						}
+						> input {
+							display: none;
+						}
+						> label {
+							background-color: #4f4f4f;
+							position: absolute;
+							left: 10px;
+							bottom: 6px;
+							font-family: 'Baloo 2', sans-serif;
+							font-size: 0.9rem;
+							color: #fafafa;
+							padding: 0 6px;
+							border-radius: 4px;
+							cursor: pointer;
+							pointer-events: none;
+						}
+
+						&:nth-child(2) {
+							width: 100px;
+							height: 100px;
+							pointer-events: none;
+							order: 1;
+						}
+						&:nth-child(3) {
+							width: 60px;
+							height: 60px;
+							pointer-events: none;
+							order: 3;
+						}
+					}
+				}
+				> label {
+					font-family: 'Baloo 2', sans-serif;
+					color: #2a2a2a;
+					cursor: text;
+				}
+				> input {
+					background-color: #fafafa;
+					height: 34px;
+					padding: 0 6px;
+					border: 2px solid #eaeaea;
+					border-radius: 4px;
+				}
+			}
+			&--action {
+				display: flex;
+				justify-content: flex-end;
+				justify-content: space-between;
+				margin-top: 50px;
+
+				> button {
+					height: 32px;
+					font-family: 'Baloo 2', sans-serif;
+					font-size: 0.9rem;
+					font-weight: 500;
+					color: #fafafa;
+					border: none;
+					border-radius: 2px;
+					cursor: pointer;
+
+					&:nth-child(1) {
+						background-color: transparent;
+						color: #1a73e8;
+						width: 140px;
+						border: 1px solid #1a73e8;
+					}
+					&:nth-child(2) {
+						background-color: #1a73e8;
+						width: calc(100% - 140px - 20px);
+
+						&::after {
+							transition: 0.2s ease all;
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, -50%);
+							content: attr(value);
+						}
+
+						&.processing {
+							&::after {
+								opacity: 0;
+							}
+
+							> svg {
+								animation: spin 1.2s linear infinite;
+								opacity: 1;
+							}
+
+							@keyframes spin {
+								to {
+									transform: rotate(360deg);
+								}
+							}
+						}
+
+						> svg {
+							opacity: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

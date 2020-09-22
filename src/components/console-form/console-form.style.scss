@@ -1,0 +1,133 @@
+.console-form {
+	color: #1e1e1e;
+	padding-bottom: 80px;
+
+	&__form {
+		&__images {
+			display: flex;
+
+			img {
+				margin-bottom: 5px;
+				border: 2px solid #f0f0f0;
+				border-radius: 8px;
+				cursor: pointer;
+			}
+
+			&--image {
+				display: flex;
+				flex-direction: column;
+				margin-bottom: 30px;
+
+				> img {
+					width: 400px;
+					height: 250px;
+
+					&.icon {
+						width: 250px;
+					}
+				}
+				> input {
+					display: none;
+				}
+				> label {
+					font-family: 'Baloo 2', sans-serif;
+				}
+			}
+
+			&__image {
+				display: flex;
+				flex-direction: column;
+				margin-left: 10px;
+
+				&--image {
+					> img {
+						width: 192px;
+						height: 120px;
+
+						&.cards {
+							width: 400px;
+							height: 250px;
+						}
+					}
+					> input {
+						display: none;
+					}
+				}
+			}
+		}
+		&__input-box {
+			position: relative;
+			margin-bottom: 40px;
+
+			> label {
+				width: 140px;
+				display: inline-block;
+				font-family: 'Baloo 2', sans-serif;
+			}
+			> input {
+				transition: 0.2s ease;
+				background-color: #fafafa;
+				width: 540px;
+				height: 38px;
+				padding: 0 8px;
+				border: 1px solid #eaeaea;
+				border-radius: 4px;
+			}
+			> #password-req {
+				position: absolute;
+				bottom: -24px;
+				left: 680px;
+				transform: translateX(-100%);
+				width: fit-content;
+				font-family: 'Baloo 2', sans-serif;
+				color: #6e6e6e;
+			}
+		}
+
+		.console-form-submit {
+			background-color: #1a73e8;
+			width: 180px;
+			height: 36px;
+			color: #fafafa;
+			border: 1px solid #eaeaea;
+			border-radius: 2px;
+			cursor: pointer;
+
+			&::after {
+				transition: 0.2s ease all;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				content: attr(value);
+			}
+
+			&.processing {
+				&::after {
+					opacity: 0;
+				}
+
+				> svg {
+					animation: spin 1.2s linear infinite;
+					opacity: 1;
+				}
+
+				@keyframes spin {
+					to {
+						transform: rotate(360deg);
+					}
+				}
+			}
+
+			> svg {
+				opacity: 0;
+			}
+		}
+
+		&--ending {
+			width: 680px;
+			text-align: center;
+			margin-top: 60px;
+		}
+	}
+}

@@ -1,0 +1,28 @@
+.profile-project {
+	position: relative;
+	width: 100%;
+	height: 70%;
+	display: inline-flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+	overflow-y: auto;
+
+	&.loaded {
+		height: auto;
+	}
+
+	> * {
+		margin: 5px;
+	}
+
+	&--error {
+		width: 100%;
+		height: 360px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font: 400 1.4rem 'Baloo 2', sans-serif;
+		color: #6e6e6e;
+		text-align: center;
+	}
+}

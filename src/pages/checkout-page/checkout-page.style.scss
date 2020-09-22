@@ -1,0 +1,98 @@
+.checkout-page {
+	width: 100%;
+	min-height: 100vh;
+	padding-top: 50px;
+
+	&__container {
+		position: relative;
+		width: 100%;
+		max-width: 1400px;
+		height: 100%;
+		color: #2e2e2e;
+		margin: 0 auto;
+		padding: 60px 40px;
+	}
+
+	&__header {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		&--block {
+			font: 500 1.1rem 'Baloo 2', sans-serif;
+			width: 20%;
+			padding-bottom: 4px;
+			border-bottom: 1px solid #eaeaea;
+			margin: 0 5px;
+
+			&:nth-child(1) {
+				width: 200px;
+				margin-left: 0;
+			}
+			&:nth-child(2) {
+				width: calc(100% - 490px);
+			}
+			&:nth-child(3),
+			&:nth-child(4) {
+				width: 100px;
+				text-align: center;
+			}
+			&:nth-child(5) {
+				width: 50px;
+				margin-right: 0;
+				border-bottom: none;
+			}
+		}
+	}
+
+	&__checkout {
+		background-color: #ffffff;
+		position: relative;
+		left: calc(100% - 280px);
+		width: fit-content;
+		margin: 40px 0;
+		padding: 40px;
+		box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.25);
+
+		> div {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 20px;
+			text-align: right;
+		}
+		> button,
+		> a {
+			background-color: #1a73e8;
+			width: 160px;
+			height: 32px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font: 400 0.98rem 'Baloo 2', sans-serif;
+			color: #ffffff;
+			margin-bottom: 10px;
+			border: 1px solid #eaeaea;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+	}
+
+	&--empty {
+		height: 66vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		> span {
+			font: 400 1.6rem 'Baloo 2', sans-serif;
+			color: #dcdcdc;
+			margin-top: -11px;
+		}
+	}
+
+	&--ending {
+		text-align: center;
+		margin: 80px 0 40px 0;
+	}
+}

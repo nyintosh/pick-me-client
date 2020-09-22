@@ -1,0 +1,33 @@
+.browse-page {
+	transition: 0.2s ease;
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	padding-top: 50px;
+
+	&__container {
+		position: relative;
+		width: 100%;
+		max-width: 1400px;
+		min-height: calc(100vh - 500px);
+		margin: 0 auto;
+	}
+	&--title {
+		font-size: 1.4rem;
+		color: #3e3e3e;
+		text-transform: capitalize;
+		padding-left: 30px;
+		margin: 50px 0 10px 0;
+	}
+	&__content {
+		width: 100%;
+		display: inline-flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-bottom: 60px;
+
+		& > * {
+			margin: 10px;
+		}
+	}
+}
